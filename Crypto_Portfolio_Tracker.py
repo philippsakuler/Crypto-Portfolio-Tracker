@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 #Specifies crypto holdings
 portfolio = {
     'BTC': 0.01280118,
- 
+    'ETH': 0.4,
     
     }
 
@@ -34,25 +34,25 @@ def get_crypto_price(ticker):
 def display_portfolio(portfolio):
     print(f"----------------------------------------------------------\n")
     total_value = 0.0
-    prices = {}  # Store prices to avoid redundant API calls
+    prices = {}  #Stores prices to avoid redundant API calls
     
     for ticker, amount in portfolio.items():
         price = get_crypto_price(ticker)
-        prices[ticker] = price  # Save fetched price
+        prices[ticker] = price  #Saves fetched price
         value = amount * price
         total_value += value
         print(f"{ticker}: ${price:.2f} (You own {amount} {ticker}, Value: ${value:.2f})")
     
     print(f"{get_formatted_time()} | Total Portfolio Value: ${total_value:.2f}\n")
     
-    #Pass prices to update_portfolio_history
+    #Passes prices to update_portfolio_history
     update_portfolio_history(portfolio, prices)
 
 #Updates portfolio history
 def update_portfolio_history(portfolio, prices):
     total_value = 0.0
     for ticker, amount in portfolio.items():
-        price = prices[ticker]  # Use pre-fetched price
+        price = prices[ticker]  #Uses pre-fetched price
         value = amount * price
         total_value += value
 
