@@ -63,8 +63,6 @@ def update_portfolio_history(portfolio, prices):
     portfolio_history['timestamps'].append(get_formatted_time())
     portfolio_history['values'].append(total_value)
 
-    print(f"Total Portfolio Value Updated: ${total_value:.2f}")
-
 #Visualizes portfolio
 def plot_portfolio():
     plt.figure(1, figsize=(10, 5))  # Use figure number 1 to reuse the same window
