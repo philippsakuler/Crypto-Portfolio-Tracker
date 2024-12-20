@@ -41,7 +41,7 @@ Sicherheit
 
 
 Einhaltung von Standards
-•	Standards größteils eingehalten.
+•	Nach unserer Einschätzung und unserem Wissen wurden die Standards eingehalten.
 •	Maximale Zeilenlänge an einigen Stellen überprüfen; entspricht nicht den Standards (zb. Zeile 77 hat 100 Zeichen, max .80 Zeichen pro Zeile laut Python-standards)
 
 Tests
