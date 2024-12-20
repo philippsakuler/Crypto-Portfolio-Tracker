@@ -14,14 +14,34 @@ BTC: 0.01280118
 ETH: 0.4
 
 Ergebnis und Review:
-Erstaunlich ähnlich. Auch in der Entwicklung haben wir ChatGPT verwendet, allerdings deutlich schlechtere Ergebnisse bekommen. Wahrscheinlich ist es im Nachheinein einfacher einen akkuraten Prompt zu schreiben
-Z.b. hatten wir in der Enticklung das Problem, das mit jedem refresh der Graphic ein neues Fenster geöffnet wurde. Das war jetzt nicht der Fall.
+Das Ergebnis ist erstaunlich ähnlich. Auch in der Entwicklung haben wir ChatGPT verwendet, allerdings deutlich schlechtere Ergebnisse bekommen. Wahrscheinlich ist es im Nachheinein (reverse - engineering) einfacher einen akkuraten Prompt zu schreiben
+Z.b. hatten wir in der Entwicklung das Problem, dass mit jedem refresh der Grafik ein neues Fenster geöffnet wurde. Das war jetzt nicht der Fall.
 
 Mögliche Leitfragen für die Analyse des AI-Codes
 • Funktionalität: Funktioniert der generierte Code? Stimmt die Ausgabe mit der erwarteten Ausgabe überein?
+
+Ja der Code macht, was er tun soll.
+
 • Datentypen und Variablennamen: Verwendet der generierte Code die richtigen Datentypen und sind die Variablennamen sinnvoll gewählt?
+
+Soweit erkennbar, ja.
+
 • Übersichtlichkeit und Struktur: Ist der generierte Code übersichtlich und gut strukturiert? Ist er leicht zu lesen und zu verstehen?
+
+Der Code ist übersichtlich
+
 • Effizienz: Ist der generierte Code effizient? Gibt es redundante oder ineffiziente Operationen? Kann der Code optimiert werden?
+
+Der Code verwendet sogar ca 30 Zeilen weniger als unser Code, und bringt aber fast genau dasselbe Ergebnis.
+
 • Vergleich mit menschlich geschriebenem Code: Wie unterscheidet sich der generierte Code von eurem Code, der die gleiche Aufgabe erfüllt?
+
+
+
 • Methoden der Code-Generierung: Welchen Input hast du zur Code-Generierung benutzt? Bekommst du ein anderes Ergebnis, wenn du die Anfrage anders formulierst?
+
+Prompt: siehe oben. Und ja bei einem anderen Prompt bekommen wir ein anderes Ergebnis.
+
 • Dokumentation: Ist der generierte Code gut dokumentiert? Gibt es Kommentare, die den Code erklären und seine Funktionsweise beschreiben?
+
+Ja, es gibt einige Kommentare die den Code übersichtlich erklären.
