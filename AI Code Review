@@ -20,7 +20,11 @@ Z.b. hatten wir in der Entwicklung das Problem, dass mit jedem refresh der Grafi
 Mögliche Leitfragen für die Analyse des AI-Codes
 • Funktionalität: Funktioniert der generierte Code? Stimmt die Ausgabe mit der erwarteten Ausgabe überein?
 
-Ja der Code macht, was er tun soll.
+Ja der Code macht, was er tun soll. Allerdings gibt es einen etwas längeren delay, bevor das erste mal der Portfoliiowert als Text in der Konsole ausgegeben wird und bevor die Grafik erscheint.
+Außerdem zeigt es folgende Error Message an, die allerdings das Ergebnis nicht beeinträchtigt.
+
+UserWarning: frames=None which we can infer the length of, did not pass an explicit *save_count* and passed cache_frame_data=True.  To avoid a possibly unbounded cache, frame data caching has been disabled. To suppress this warning either pass `cache_frame_data=False` or `save_count=MAX_FRAMES`.
+  ani = FuncAnimation(fig, update, interval=2000)
 
 • Datentypen und Variablennamen: Verwendet der generierte Code die richtigen Datentypen und sind die Variablennamen sinnvoll gewählt?
 
