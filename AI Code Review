@@ -1,0 +1,27 @@
+AI Code:
+
+Prompt:
+
+Erstelle einen Python code für einen Krypto Portfolio Tracker. Der Tracker soll mithilfe einer API live Daten fetchen und diese sowohl als Text als auch graphisch darstellen.
+
+In der Basis Funktion soll der Krypto Tracker alle 2 Sekunden den Portfoliobestand (Wert und Menge der einzelnen Währung) als Text in der Konsole ausgeben
+
+Graphisch:
+Einerseits sollen die Krypto Bestände in einem Tortendiagramm angezeigt werden (nach Währung), andererseits soll der Portfoliowert mit einem Liniendiagramm dargestellt werden, dass sich alle 2 Sekunden updated.
+
+Portfoliobestand:
+BTC: 0.01280118
+ETH: 0.4
+
+Ergebnis und Review:
+Erstaunlich ähnlich. Auch in der Entwicklung haben wir ChatGPT verwendet, allerdings deutlich schlechtere Ergebnisse bekommen. Wahrscheinlich ist es im Nachheinein einfacher einen akkuraten Prompt zu schreiben
+Z.b. hatten wir in der Enticklung das Problem, das mit jedem refresh der Graphic ein neues Fenster geöffnet wurde. Das war jetzt nicht der Fall.
+
+Mögliche Leitfragen für die Analyse des AI-Codes
+• Funktionalität: Funktioniert der generierte Code? Stimmt die Ausgabe mit der erwarteten Ausgabe überein?
+• Datentypen und Variablennamen: Verwendet der generierte Code die richtigen Datentypen und sind die Variablennamen sinnvoll gewählt?
+• Übersichtlichkeit und Struktur: Ist der generierte Code übersichtlich und gut strukturiert? Ist er leicht zu lesen und zu verstehen?
+• Effizienz: Ist der generierte Code effizient? Gibt es redundante oder ineffiziente Operationen? Kann der Code optimiert werden?
+• Vergleich mit menschlich geschriebenem Code: Wie unterscheidet sich der generierte Code von eurem Code, der die gleiche Aufgabe erfüllt?
+• Methoden der Code-Generierung: Welchen Input hast du zur Code-Generierung benutzt? Bekommst du ein anderes Ergebnis, wenn du die Anfrage anders formulierst?
+• Dokumentation: Ist der generierte Code gut dokumentiert? Gibt es Kommentare, die den Code erklären und seine Funktionsweise beschreiben?
