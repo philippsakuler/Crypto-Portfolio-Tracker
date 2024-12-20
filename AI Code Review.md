@@ -32,7 +32,7 @@ Soweit erkennbar, ja.
 
 • Übersichtlichkeit und Struktur: Ist der generierte Code übersichtlich und gut strukturiert? Ist er leicht zu lesen und zu verstehen?
 
-Der Code ist übersichtlich
+Ja, der Code ist übersichtlich. Jede Funktion hat eine spezifische Aufgabe, wie z. B. das Abrufen von Preisen (fetch_prices), das Berechnen des Portfoliowerts (calculate_portfolio_value), und das Aktualisieren der Diagramme (update_pie_chart, update_line_chart).
 
 • Effizienz: Ist der generierte Code effizient? Gibt es redundante oder ineffiziente Operationen? Kann der Code optimiert werden?
 
@@ -40,7 +40,7 @@ Der Code verwendet sogar ca 30 Zeilen weniger als unser Code, und bringt aber fa
 
 • Vergleich mit menschlich geschriebenem Code: Wie unterscheidet sich der generierte Code von eurem Code, der die gleiche Aufgabe erfüllt?
 
-
+Der AI Code hat sogar ein Fallback auf simulierte Preise (Random-Werte), wenn ein Fehler beim Abruf auftritt. Dies haben wir nicht bedacht. Der AI Code hat jedoch keine dauerhafte Speicherung des Verlaufs von Portfolio-Werten und nutzt ebenfalls keine Zeitstempel.
 
 • Methoden der Code-Generierung: Welchen Input hast du zur Code-Generierung benutzt? Bekommst du ein anderes Ergebnis, wenn du die Anfrage anders formulierst?
 
