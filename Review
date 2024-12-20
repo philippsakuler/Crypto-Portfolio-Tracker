@@ -1,0 +1,55 @@
+Code Review 
+
+
+Korrektheit
+•	Funktioniert wie erwartet, zeigt Portfolio-Werte korrekt an.
+•	Erfüllt Anforderungen: Anzeige, Historie und Visualisierung des Portfolios.
+
+Lesbarkeit
+•	Gut lesbar, sinnvoll modular aufgebaut.
+•	Kommentare vorhanden, aber Eingaben/Ausgaben von Funktionen könnte man mehr dokumentieren.
+
+Effizienz
+•	Hier könnte man durch die Einbindung eines Caching etwaige Redundanzen vermeiden, indem man bereits erfolgte API-Aufrufe speichern lässt. Dadurch erspart man sich die erneute Abfrage.
+
+def get_cached_crypto_prices(tickers):
+    """
+    Fetches prices for multiple cryptocurrencies using caching to avoid redundant API calls.
+
+    Args:
+        tickers (list): List of cryptocurrency tickers to fetch.
+
+    Returns:
+        dict: A dictionary mapping tickers to their respective prices.
+    """
+    prices = {}
+    for ticker in tickers:
+        if ticker not in prices:
+            prices[ticker] = get_crypto_price(ticker)
+    return prices
+
+
+Wartbarkeit
+•	Modularer Aufbau erleichtert Änderungen. Die Funktionen wie display_portfolio und update_portfolio_history sind klar voneinander getrennt, was Änderungen erleichtert.
+
+
+Fehlerbehandlung
+•	Die Fehlerbehandlung könnte erweitert werden, insbesondere bei API-Aufrufen. In der Funktion get_crypto_price fehlt eine Absicherung gegen Netzwerkfehler, ungültige API-Antworten, was zu Abstürzen führen kann. Eine Lösung wäre die Verwendung von try-except-Blöcken, um solche Fehler abzufangen und aussagekräftige Meldungen auszugeben (zB bei Zeitüberschreitungen oder invalid crypto price?). 
+
+Sicherheit
+•	Keine Sicherheitslücken sichtbar.
+
+
+Einhaltung von Standards
+•	Standards größteils eingehalten.
+•	Maximale Zeilenlänge an einigen Stellen überprüfen; entspricht nicht den Standards (zb. Zeile 77 hat 100 Zeichen, max .80 Zeichen pro Zeile laut Python-standards)
+
+Tests
+•	Keine automatisierten Tests vorhanden.
+
+Skalierbarkeit
+•	Redundante API-Aufrufe beeinträchtigen Skalierbarkeit. Lösung: Implementierung von Caching (siehe oben).
+•	Visualisierung könnte bei fehlenden Daten könnte verschönert werden. Anstatt nur "No data to plot yet." auszugeben, könnte ein leeres Diagramm mit einer Beschriftung erstellt werden, um die Benutzererfahrung zu verbessern.
+
+
+Resümee: Grundsätzlich ist euch das Projekt gut gelungen, und ihr habt eine gute Idee erfolgreich in ein funktionsfähiges Projekt umgesetzt. Der Code ist insgesamt solide, und unsere Kommentare sowie Empfehlungen dienen lediglich dazu, ihn weiter zu optimieren und nur zu „verschönern“.  
