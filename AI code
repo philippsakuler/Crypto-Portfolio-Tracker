@@ -1,0 +1,83 @@
+import time
+import threading
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+import ccxt
+import random
+
+# Portfolio initialisieren
+portfolio = {
+    'BTC': 0.01280118,
+    'ETH': 0.4
+}
+
+def fetch_prices():
+    """ Holt die aktuellen Preise für die Währungen im Portfolio."""
+    try:
+        # Für echte API-Daten verwenden
+        exchange = ccxt.binance()
+        prices = {}
+        for symbol in portfolio.keys():
+            ticker = exchange.fetch_ticker(symbol + '/USDT')
+            prices[symbol] = ticker['last']
+        return prices
+    except Exception as e:
+        print(f"Fehler beim Abrufen der Preise: {e}")
+        # Fallback: Simulierte Daten
+        return {symbol: random.uniform(20000, 50000) for symbol in portfolio.keys()}
+
+def calculate_portfolio_value(prices):
+    """ Berechnet den aktuellen Wert des Portfolios."""
+    return sum(amount * prices[symbol] for symbol, amount in portfolio.items())
+
+def display_portfolio(prices):
+    """ Gibt den Portfoliobestand als Text aus."""
+    print("Aktueller Portfoliobestand:")
+    for symbol, amount in portfolio.items():
+        print(f"{symbol}: {amount:.8f} ({amount * prices[symbol]:.2f} USD)")
+    print(f"Gesamtwert: {calculate_portfolio_value(prices):.2f} USD\n")
+
+def update_pie_chart(ax, prices):
+    """ Aktualisiert das Tortendiagramm."""
+    ax.clear()
+    labels = portfolio.keys()
+    sizes = [amount * prices[symbol] for symbol, amount in portfolio.items()]
+    ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
+    ax.set_title("Portfolioverteilung")
+
+def update_line_chart(ax, times, values):
+    """ Aktualisiert das Liniendiagramm."""
+    ax.clear()
+    ax.plot(times, values, label="Portfolio-Wert")
+    ax.set_xlabel("Zeit")
+    ax.set_ylabel("Wert (USD)")
+    ax.legend()
+    ax.set_title("Portfolio-Wertentwicklung")
+
+def live_update():
+    """ Hauptlogik zur Live-Aktualisierung."""
+    # Setup für Matplotlib
+    fig, (ax_pie, ax_line) = plt.subplots(1, 2, figsize=(12, 6))
+
+    times = []
+    values = []
+
+    def update(frame):
+        prices = fetch_prices()
+        display_portfolio(prices)
+
+        # Update Zeit und Wert
+        times.append(len(times))
+        values.append(calculate_portfolio_value(prices))
+
+        # Update Diagramme
+        update_pie_chart(ax_pie, prices)
+        update_line_chart(ax_line, times, values)
+
+    ani = FuncAnimation(fig, update, interval=2000)
+    plt.tight_layout()
+    plt.show()
+
+if __name__ == "__main__":
+    live_update()
+
